@@ -13,7 +13,7 @@ const plugins = [
         console: [{
           module: 'good-squeeze',
           name: 'Squeeze',
-          args: [{log: '*', response: '*'}]
+          args: [{log: '*', response: '*', payload: '*'}]
         }, {
           module: 'good-console'
         }, 'stdout']
