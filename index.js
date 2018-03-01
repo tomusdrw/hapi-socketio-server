@@ -2,10 +2,9 @@
 
 const server = require('./server')
 
-
-server
-  .register({
-    plugin: require('good'),
+const plugins = [
+  {
+    register: require('good'),
     options: {
       ops: {
         interval: 5000
@@ -20,9 +19,20 @@ server
         }, 'stdout']
       }
     }
+  },
+  {
+    register: require('hapi-io'),
+    options: {
+    }
+  }
+]
+
+server.register(plugins, () => {
+  server.start(err => {
+    if (err) {
+      throw err
+    }
+
+    console.log(`Server running at ${server.info.uri}`)
   })
-  .then(() => server.start())
-  .then(() => console.log(`Server running at ${server.info.uri}`))
-  .catch(err => {
-    throw err
-  })
+})
