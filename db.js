@@ -11,6 +11,7 @@ class Db {
   async add (product) {
     product.id = 1 + this.products
       .reduce((max, current) => max > current.id ? max : current.id, 0)
+    product.img = `https://xpla.org/ext/lorempixel/250/250/technics/${product.id}`;
     this.products.push(product)
     return product
   }

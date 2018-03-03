@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "iPad",
+    "img": "https://xpla.org/ext/lorempixel/250/250/technics/1",
     "description": "The iPad device is roughly the size of a sheet of paper and weighs 1.5 pounds. The screen is a 9.7-inch LED backlit glossy multi-touch screen, capable of displaying up to 1024x768 pixel resolution.",
     "price": 129900,
     "isSpecial": true
@@ -9,18 +10,21 @@
   {
     "id": 2,
     "name": "Turntable",
+    "img": "https://xpla.org/ext/lorempixel/250/250/technics/2",
     "description": "The term \"phonograph\" was usually restricted to machines that used cylinder records. ... After the introduction of the softer vinyl records, 33 1⁄3-rpm LPs (long-playing records) and 45-rpm \"single\" or two-song records, and EPs (extended-play recordings), the common name became \"record player\" or \"turntable\".",
     "price": 49900
   },
   {
     "id": 3,
     "name": "Notebook",
+    "img": "https://xpla.org/ext/lorempixel/250/250/technics/3",
     "description": "A laptop, often called a notebook or \"notebook computer\", is a small, portable personal computer with a \"clamshell\" form factor, an alphanumeric keyboard on the lower part of the \"clamshell\" and a thin LCD or LED computer screen on the upper part, which is opened up to use the computer.",
     "price": 499900,
     "isSpecial": true
   },
   {
     "id": 6,
+    "img": "https://xpla.org/ext/lorempixel/250/250/technics/6",
     "name": "Headphones",
     "description": "Headphones (or head-phones in the early days of telephony and radio) are a pair of small loudspeaker drivers worn on or around the head over a user's ears. They are electroacoustic transducers, which convert an electrical signal to a corresponding sound. ",
     "price": 9900
