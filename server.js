@@ -15,6 +15,9 @@ server.connection({
 server.route({
   method: 'GET',
   path: '/api/products',
+  config: {
+    tags: ['api']
+  },
   handler (req, reply) {
     db.get().then(reply)
   }
@@ -30,6 +33,7 @@ server.route({
   method: 'POST',
   path: '/api/products',
   config: {
+    tags: ['api'],
     validate: {
       payload: Joi.alternatives().try(product, { payload: product })
     },
@@ -54,6 +58,7 @@ server.route({
   method: 'DELETE',
   path: '/api/products/{payload}',
   config: {
+    tags: ['api'],
     validate: {
       params: {
         payload: Joi.number().greater(6)

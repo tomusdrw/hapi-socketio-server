@@ -3,6 +3,17 @@
 const server = require('./server')
 
 const plugins = [
+  require('inert'),
+  require('vision'),
+  {
+    register: require('hapi-swagger'),
+    options: {
+      info: {
+        title: 'Shop API documentation',
+        version: '1.0'
+      }
+    }
+  },
   {
     register: require('good'),
     options: {
