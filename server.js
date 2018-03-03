@@ -53,7 +53,11 @@ server.route({
   handler (req, reply) {
     db.add(req.payload.payload || req.payload)
       .then(reply)
-      .then(() => server.plugins['hapi-io'].io.emit('action', { type: 'PRODUCTS_CHANGED', payload: null }))
+      .then(() => db.get())
+      .then(products => server.plugins['hapi-io'].io.emit('action', {
+        type: 'PRODUCTS_CHANGED',
+        payload: products
+      }))
   }
 })
 
@@ -82,7 +86,11 @@ server.route({
       return reply(boom.notFound('Product does not exist.'))
     }
 
-    server.plugins['hapi-io'].io.emit('action', { type: 'PRODUCTS_CHANGED', payload: null })
+    const products = await db.get();
+    server.plugins['hapi-io'].io.emit('action', {
+      type: 'PRODUCTS_CHANGED',
+      payload: products
+    })
     return reply(removed)
   }
 })
